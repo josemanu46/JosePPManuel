@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clinica</title>
+    <!--link gobierno-->
+    <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
+
+    <!--links mios
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="js/script.js">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+-->
+<!--links-->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.3/css/select.dataTables.min.css">
+    <link href="Graphik/Graphik.css" rel="stylesheet" />
+    <script src="bootstrap3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key="></script>
+</head>
+<script>
+    //window.onload = function () {
+
+    //    var titulomenu = document.getElementById("titulomenu");
+    //    titulomenu.innerHTML = "Menu Expediente Clinico C5i"
+
+
+
+    //}
+    javascript: window.history.forward(1); //Esto es para cuando le pulse al botón de Atrás
+    //javascript:window.history.back(1); //Esto para cuando le pulse al botón> de Adelante
+
+    window.onload = function () {
+        mensajes();
+
+
+    }
+
+    function mensajes() {
+
+
+        var resumen = document.getElementById("resumen");
+        var titulo = document.getElementById("titulo");
+        var c5 = "<b>área de Desarrollo de Tecnologías del Centro de Control, Comando, Comunicaciones, Cómputo, Coordinación e Inteligencia (C5i) del Estado de Hidalgo</b>"
+        resumen.innerHTML = "La Dirección de Desarrollo de Tecnologías diseñó esta plataforma que permitirá dar seguimiento a los incidentes reportados y relacionados con la violencia de género, para así poder obtener y aportar información específica a cada reporte como lo son personas relacionadas tanto victimas como agresores. También se podrá obtener gráficos que resumen la información registrada en el sistema y visualizar en un mapa la dirección exacta donde ocurrió el incidente."
+    }
+
+</script>
+<style>
+
+
+    #contenedorTexto {
+        margin-left: 10px;
+        margin-right: 50px;
+        text-align: justify;
+        font-size: medium;
+        color: #FFF;
+    }
+
+    #resumen {
+        background-color: transparent;
+        color: white;
+        font-size: larger;
+    }
+
+    .entrada {
+        transition: transform 1s;
+    }
+
+    .entrada:hover {
+        transform: scale(1.1);
+    }
+
+    .salida {
+        transition: transform 1s;
+    }
+
+    .salida:hover {
+        transform: scale(1.1);
+    }
+    .jumbotron {
+  background-image: url("img/chesee.jpeg");
+  background-size: cover;
+  height: 100%;
+}
+
+</style>
+<body>
+      <main>
+        <div class="formBox" style="padding-left:60px; padding-right:60px">
+            <div class="jumbotron"
+                style="background-color: #235B4E; border-radius: 15px 15px 15px 15px; padding: 15px 15px 15px 10px">
+                <div class="row col-lg-6">
+
+                    <img src="img/i (5).png" alt="">
+
+                </div>
+                <div class="row col-lg-6">
+                    <div id="contenedorTexto">
+                        <div>
+                            <h1 class="text-left" id="titulo">¡Bienvenido!</h1>
+                        </div>
+                        <div class="container-fluid" id="resumen">
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+
+                    <button class="button" type="button">Grande</button>
+            </div>
+            <!--tabla-->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div style="height: 10px;"></div>
+                </div>
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-12">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding: 0%;">
+                        <div class="card-header"
+                            style="text-align: center ; color: white; background-color: #691C32; border-radius:15px 15px 0px 0px; height: 50px;">
+                            <div class="relieve4">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4>Consultas de hoy</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contenedor2" style="background-color: #f1ecec; opacity: 0.9;">
+                            <div class="row" style="padding: 2%;">
+                                <!-- contenido tabla-->
+                                <!-- CONTENIDO DEL PANEL -->
+                                <div class="table-responsive">
+                                    <table id="example" class="table table-striped" style="width:100%">
+                                        
+
+                                        <thead>
+                                            <center>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>Apellido Paterno</th>
+                                                    <th>Apellido materno</th>
+                                                    <th>Sexo</th>
+                                                    <th>Edad</th>
+                                                    <th>Fecha Alta</th>
+                                                </tr>
+                                            </center>
+                                            <tr>
+                                                <td>Jennifer Acosta</td>
+                                                <td>Junior Javascript Developer</td>
+                                                <td>Edinburgh</td>
+                                                <td>43</td>
+                                                <td>2013-02-01</td>
+                                                <td>$75,650</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cara Stevens</td>
+                                                <td>Sales Assistant</td>
+                                                <td>New York</td>
+                                                <td>46</td>
+                                                <td>2011-12-06</td>
+                                                <td>$145,600</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Hermione Butler</td>
+                                                <td>Regional Director</td>
+                                                <td>London</td>
+                                                <td>47</td>
+                                                <td>2011-03-21</td>
+                                                <td>$356,250</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Lael Greer</td>
+                                                <td>Systems Administrator</td>
+                                                <td>London</td>
+                                                <td>21</td>
+                                                <td>2009-02-27</td>
+                                                <td>$103,500</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jonas Alexander</td>
+                                                <td>Developer</td>
+                                                <td>San Francisco</td>
+                                                <td>30</td>
+                                                <td>2010-07-14</td>
+                                                <td>$86,500</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Shad Decker</td>
+                                                <td>Regional Director</td>
+                                                <td>Edinburgh</td>
+                                                <td>51</td>
+                                                <td>2008-11-13</td>
+                                                <td>$183,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Michael Bruce</td>
+                                                <td>Javascript Developer</td>
+                                                <td>Singapore</td>
+                                                <td>29</td>
+                                                <td>2011-06-27</td>
+                                                <td>$183,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Donna Snider</td>
+                                                <td>Customer Support</td>
+                                                <td>New York</td>
+                                                <td>27</td>
+                                                <td>2011-01-25</td>
+                                                <td>$112,000</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- CONTENIDO DEL PANEL -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+      </main>
+       <!--gobierno
+        <script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>-->
+</body>
+
+</html>
